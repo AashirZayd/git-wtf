@@ -3,11 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>git-wtf — The human-friendly Git state interpreter</title>
-  <meta name="description" content="Git tells you what changed. git-wtf tells you what it means. A tiny, local, offline CLI that turns raw Git state into human-friendly explanations.">
+  <title>git-wtf — Your Git repository, explained</title>
+  <meta name="description" content="A human-friendly Git state interpreter that explains what is happening in your repository instead of simply dumping git status information.">
+  <meta property="og:title" content="git-wtf — Your Git repository, explained">
+  <meta property="og:description" content="A human-friendly Git state interpreter that turns raw Git state into clear explanations in seconds.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://github.com/AashirZayd/git-wtf">
   <link rel="stylesheet" href="./styles/main.css">
 </head>
 <body>
+  <!-- CRT Screen Scanline & Vignette Effect -->
+  <div class="crt-overlay" aria-hidden="true"></div>
 
   <!-- Header -->
   <header class="header">
@@ -15,11 +21,13 @@
       <a href="#" class="brand" aria-label="git-wtf home">
         <span class="brand-dot" aria-hidden="true"></span>
         <span>git-wtf</span>
+        <span class="brand-badge">v0.1.0</span>
       </a>
       <nav class="nav-links" aria-label="Main Navigation">
         <a href="#problem" class="nav-link">Why git-wtf</a>
-        <a href="#pipeline" class="nav-link">Interpretation</a>
-        <a href="#examples" class="nav-link">Examples</a>
+        <a href="#pipeline" class="nav-link">How it works</a>
+        <a href="#examples" class="nav-link">Terminal Demo</a>
+        <a href="#builds" class="nav-link">Builds</a>
         <a href="#install" class="nav-link">Install</a>
         <a href="#safety" class="nav-link">Safety</a>
         <a href="https://github.com/AashirZayd/git-wtf" class="btn btn-secondary btn-sm" target="_blank" rel="noopener noreferrer" aria-label="GitHub repository">GitHub</a>
@@ -32,19 +40,19 @@
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-content">
-          <div class="eyebrow">Open Source · Git CLI</div>
+          <div class="hero-prompt-tag">$ git-wtf --interpret</div>
           <h1 class="hero-title">git-wtf</h1>
-          <h2 class="hero-tagline">The human-friendly Git state interpreter.</h2>
+          <h2 class="hero-tagline">Your Git repository, explained.</h2>
           <p class="hero-description">
-            Git tells you what changed.<br>
-            <strong>git-wtf tells you what it means.</strong>
+            A human-friendly Git state interpreter that explains what is happening
+            in your repository instead of simply dumping <code>git status</code> information.
           </p>
           <div class="hero-ctas">
-            <a href="#install" class="btn btn-primary">Get Started</a>
-            <a href="#examples" class="btn btn-secondary">Explore Examples</a>
+            <a href="#install" class="btn btn-primary">[ Install with npm ]</a>
+            <a href="https://github.com/AashirZayd/git-wtf" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">[ View Source ]</a>
           </div>
           <div class="hero-meta">
-            <span class="meta-item">MIT License</span>
+            <span class="meta-item">MIT Licensed</span>
             <span class="meta-dot" aria-hidden="true"></span>
             <span class="meta-item">100% Offline</span>
             <span class="meta-dot" aria-hidden="true"></span>
@@ -52,7 +60,7 @@
           </div>
         </div>
 
-        <!-- Interactive / Rendered Terminal Window -->
+        <!-- Realistic Terminal Window Hero Concept -->
         <div class="terminal-window" aria-label="git-wtf terminal preview">
           <div class="terminal-header">
             <div class="terminal-controls" aria-hidden="true">
@@ -60,11 +68,13 @@
               <span class="ctrl-dot"></span>
               <span class="ctrl-dot"></span>
             </div>
-            <span class="terminal-title">git wtf</span>
+            <span class="terminal-title">~/repo — git-wtf (sh)</span>
             <span style="width: 42px;"></span>
           </div>
           <div class="terminal-body">
-<pre><span class="t-brand">GIT WTF</span>
+<pre><span class="t-green">$</span> <span class="t-bold">git-wtf</span>
+
+<span class="t-brand">GIT WTF</span>
 
 <span class="t-bold">Branch</span>
   main
@@ -72,7 +82,6 @@
   <span class="t-yellow">↓</span> 1 remote commit
 
 <span class="t-bold">Working tree</span>
-  <span class="t-green">✓</span> 1 staged
   <span class="t-yellow">⚠</span> 1 modified
   <span class="t-dim">+</span> 1 untracked
 
@@ -80,14 +89,12 @@
   <span class="t-red">🔴</span> <span class="t-bold">Your branch has diverged AND your working tree has changes.</span>
 
   You have 2 local commits and the remote has 1 commit you don't have.
-  Working tree: 1 staged, 1 modified, 1 untracked.
-  Rebase or pull may be blocked by your uncommitted changes.
+  Rebase or pull may be blocked by uncommitted working files.
 
 <span class="t-bold">Suggested next step</span>
   <span class="t-dim">→</span> Review or stash your working changes before reconciling history.
 
-  <span class="t-green">$</span> <span class="t-bold">git stash</span>
-  <span class="t-green">$</span> <span class="t-bold">git log --oneline --left-right HEAD...@{upstream}</span> <span class="cursor"></span></pre>
+  <span class="t-green">$</span> <span class="t-bold">npm install -g git-wtf</span> <span class="cursor" aria-hidden="true"></span></pre>
           </div>
         </div>
       </div>
@@ -408,29 +415,119 @@
       </div>
     </section>
 
+    <!-- BUILDS & OPEN SOURCE SECTION -->
+    <section id="builds" class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">Directory / Projects</div>
+          <h2 class="section-title">Builds &amp; Open Source</h2>
+          <p class="section-subtitle">
+            Things I've built, shipped, and open-sourced. Minimal, fast, and focused developer tools.
+          </p>
+        </div>
+
+        <div class="builds-dir" aria-label="Open source builds directory">
+          <div class="builds-dir-header">
+            <div>
+              <span class="builds-prompt">$</span> ls -la ~/projects
+            </div>
+            <div>[2 REPOSITORIES]</div>
+          </div>
+
+          <div class="builds-grid">
+            <!-- Project 01: git-wtf (Featured) -->
+            <div class="project-entry featured">
+              <div class="project-idx">01/02</div>
+              <div class="project-main">
+                <div class="project-title-row">
+                  <span class="project-name">git-wtf</span>
+                  <div class="project-tags">
+                    <span class="project-tag green">Open Source</span>
+                    <span class="project-tag">CLI</span>
+                    <span class="project-tag">TypeScript</span>
+                    <span class="project-tag amber">npm v0.1.0</span>
+                  </div>
+                </div>
+                <p class="project-desc">
+                  The human-friendly Git state interpreter. Analyzes combined repository states (divergence, stashes, operations) and turns raw status into clear explanations in seconds.
+                </p>
+              </div>
+              <div class="project-actions">
+                <a href="https://github.com/AashirZayd/git-wtf" class="btn btn-secondary btn-sm" target="_blank" rel="noopener noreferrer">[ Source ]</a>
+                <a href="https://www.npmjs.com/package/git-wtf" class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">[ npm ]</a>
+              </div>
+            </div>
+
+            <!-- Project 02: smart-commit -->
+            <div class="project-entry">
+              <div class="project-idx">02/02</div>
+              <div class="project-main">
+                <div class="project-title-row">
+                  <span class="project-name">smart-commit</span>
+                  <div class="project-tags">
+                    <span class="project-tag green">Open Source</span>
+                    <span class="project-tag">CLI</span>
+                    <span class="project-tag">Git Tooling</span>
+                    <span class="project-tag">Conventional Commits</span>
+                  </div>
+                </div>
+                <p class="project-desc">
+                  Interactive CLI that analyzes staged diffs and directory structure to suggest Conventional Commit types, infer scopes, and craft structured commit messages.
+                </p>
+              </div>
+              <div class="project-actions">
+                <a href="https://github.com/AashirZayd/smart-commit" class="btn btn-secondary btn-sm" target="_blank" rel="noopener noreferrer">[ Source ]</a>
+                <a href="https://www.npmjs.com/package/smart-commit-cli" class="btn btn-secondary btn-sm" target="_blank" rel="noopener noreferrer">[ npm ]</a>
+              </div>
+            </div>
+
+            <!-- Future Expansion Placeholder -->
+            <div class="project-entry placeholder">
+              <div class="project-idx">03/--</div>
+              <div class="project-main">
+                <div class="project-title-row">
+                  <span class="project-name" style="color: var(--text-dim);">[ New Build In Progress ]</span>
+                  <div class="project-tags">
+                    <span class="project-tag">Upcoming</span>
+                    <span class="project-tag">Developer Tools</span>
+                  </div>
+                </div>
+                <p class="project-desc" style="color: var(--text-dim);">
+                  More offline, lightweight developer utilities currently in design and prototyping.
+                </p>
+              </div>
+              <div class="project-actions">
+                <span class="btn btn-secondary btn-sm" style="opacity: 0.5; cursor: default;">[ Soon ]</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Installation Section -->
     <section id="install" class="section">
       <div class="container">
         <div class="section-header">
-          <div class="section-eyebrow">Installation</div>
+          <div class="section-eyebrow">Terminal / Setup</div>
           <h2 class="section-title">Install git-wtf</h2>
           <p class="section-subtitle">
-            Now available on npm. Install globally in seconds or build directly from source.
+            Available on npm registry. Install globally with npm or build directly from source.
           </p>
         </div>
 
         <div class="install-box">
-          <div style="font-size: 0.85rem; font-weight: 600; color: var(--text-primary); margin-bottom: 8px;">
-            Primary (npm)
+          <div style="font-size: 0.8rem; font-weight: 700; color: var(--phosphor-bright); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.05em;">
+            [ PRIMARY: NPM INSTALL ]
           </div>
           <div class="code-block" id="install-snippet">npm install -g git-wtf</div>
           <div style="margin-top: 10px; margin-bottom: 24px; display: flex; justify-content: space-between; align-items: center;">
-            <span style="font-size: 0.8rem; color: var(--text-muted);">Then run: <code style="font-family: var(--font-mono); color: var(--accent-orange);">git-wtf</code> or <code style="font-family: var(--font-mono); color: var(--accent-orange);">git wtf</code></span>
-            <button class="btn btn-secondary btn-sm copy-btn" data-copy-target="#install-snippet">Copy</button>
+            <span style="font-size: 0.8rem; color: var(--text-muted);">Then run: <code style="color: var(--phosphor-green);">$ git-wtf</code> or <code style="color: var(--phosphor-green);">$ git wtf</code></span>
+            <button class="btn btn-secondary btn-sm copy-btn" data-copy-target="#install-snippet">Copy command</button>
           </div>
 
-          <div style="font-size: 0.85rem; font-weight: 600; color: var(--text-primary); margin-bottom: 8px; border-top: 1px solid var(--border-subtle); padding-top: 20px;">
-            From Source
+          <div style="font-size: 0.8rem; font-weight: 700; color: var(--text-secondary); margin-bottom: 8px; border-top: 1px solid var(--border-subtle); padding-top: 20px; text-transform: uppercase; letter-spacing: 0.05em;">
+            [ ALTERNATIVE: BUILD FROM SOURCE ]
           </div>
           <div class="code-block" id="source-install-snippet">git clone https://github.com/AashirZayd/git-wtf.git
 cd git-wtf
@@ -438,14 +535,14 @@ npm install
 npm run build
 npm link</div>
           <div style="margin-top: 10px; display: flex; justify-content: space-between; align-items: center;">
-            <a href="https://www.npmjs.com/package/git-wtf" target="_blank" rel="noopener noreferrer" style="font-size: 0.8rem; color: var(--text-muted); text-decoration: underline;">View on npm</a>
+            <a href="https://www.npmjs.com/package/git-wtf" target="_blank" rel="noopener noreferrer" style="font-size: 0.8rem; color: var(--text-muted); text-decoration: underline;">[ npm package ]</a>
             <button class="btn btn-secondary btn-sm copy-btn" data-copy-target="#source-install-snippet">Copy commands</button>
           </div>
         </div>
 
         <!-- CLI Flags Compact Table -->
         <div style="margin-top: 40px; max-width: 680px;">
-          <h3 style="font-size: 1.1rem; margin-bottom: 10px;">Supported Options</h3>
+          <h3 style="font-size: 1rem; margin-bottom: 10px; color: var(--phosphor-bright);">:: Supported Options</h3>
           <table class="flags-table">
             <thead>
               <tr>
@@ -485,10 +582,10 @@ npm link</div>
     <section id="safety" class="section">
       <div class="container">
         <div class="section-header">
-          <div class="section-eyebrow">Trust &amp; Safety</div>
+          <div class="section-eyebrow">Integrity / Safety</div>
           <h2 class="section-title">Your repository stays yours.</h2>
           <p class="section-subtitle">
-            Designed from day one to be safe to run anywhere without side effects or surprises.
+            Engineered from day one as a safe, non-destructive, and offline inspection tool.
           </p>
         </div>
 
@@ -512,11 +609,9 @@ npm link</div>
           </div>
 
           <div class="safety-card">
-            <div class="safety-card-inner">
-              <div class="safety-tag">Secure</div>
-              <h3 class="safety-title">Safe Process Spawns</h3>
-              <p class="safety-desc">Invokes Git using direct argument arrays. Filenames cannot inject arbitrary shell syntax.</p>
-            </div>
+            <div class="safety-tag">Secure</div>
+            <h3 class="safety-title">Safe Process Spawns</h3>
+            <p class="safety-desc">Invokes Git using direct argument arrays without shell interpolation.</p>
           </div>
         </div>
       </div>
@@ -524,27 +619,29 @@ npm link</div>
 
     <!-- GitHub CTA Section -->
     <section class="section">
-      <div class="container" style="text-align: center; max-width: 600px;">
-        <h2 class="section-title">Built in the open.</h2>
-        <p style="margin-bottom: 24px;">
-          git-wtf is MIT licensed and designed to stay small, transparent, and developer-focused.
-        </p>
-        <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
-          <a href="https://github.com/AashirZayd/git-wtf" class="btn btn-primary" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
-          <a href="#install" class="btn btn-secondary">Install Instructions</a>
+      <div class="container">
+        <div class="terminal-cta-box">
+          <div class="cta-command">$ git clone https://github.com/AashirZayd/git-wtf.git</div>
+          <p style="margin-bottom: 24px; color: var(--text-secondary);">
+            Read the source. Run it locally. Improve it. Open source under MIT license.
+          </p>
+          <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+            <a href="https://github.com/AashirZayd/git-wtf" class="btn btn-primary" target="_blank" rel="noopener noreferrer">[ View on GitHub ]</a>
+            <a href="https://www.npmjs.com/package/git-wtf" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">[ npmjs.com ]</a>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- Minimal Footer -->
+  <!-- Minimal Terminal Footer -->
   <footer class="footer">
     <div class="container footer-inner">
       <div>
-        <strong>git-wtf</strong> — The human-friendly Git state interpreter.
+        <strong style="color: var(--phosphor-bright);">git-wtf</strong> — Open source Git tooling by Aashir Zayd.
       </div>
-      <div style="display: flex; gap: 20px;">
-        <span>MIT License</span>
+      <div class="footer-links">
+        <a href="#builds">Builds</a>
         <a href="https://www.npmjs.com/package/git-wtf" target="_blank" rel="noopener noreferrer">npm</a>
         <a href="https://github.com/AashirZayd/git-wtf" target="_blank" rel="noopener noreferrer">GitHub</a>
       </div>

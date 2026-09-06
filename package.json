@@ -1,0 +1,47 @@
+{
+  "name": "git-wtf",
+  "version": "0.1.0",
+  "description": "The human-friendly CLI that explains what the hell is happening with your Git repository right now.",
+  "bin": {
+    "git-wtf": "./bin/git-wtf.js"
+  },
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "bin",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx src/cli/index.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "site:preview": "npx --yes serve site",
+    "prepack": "npm run build"
+  },
+  "keywords": [
+    "git",
+    "cli",
+    "developer-tools",
+    "productivity",
+    "status",
+    "wtf"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "picocolors": "^1.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "vitest": "^2.1.8"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

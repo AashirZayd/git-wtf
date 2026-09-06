@@ -36,9 +36,33 @@ Suggested next step
 
 ---
 
-## Quick Start (From Source)
+## Installation
 
-`git-wtf` is currently available to build and run directly from source:
+### Primary (npm)
+
+Install globally using npm:
+
+```bash
+npm install -g git-wtf
+```
+
+Then run inside any Git repository:
+
+```bash
+git wtf
+```
+
+or directly:
+
+```bash
+git-wtf
+```
+
+Package details: [npmjs.com/package/git-wtf](https://www.npmjs.com/package/git-wtf)
+
+### From source
+
+You can also build and link `git-wtf` directly from source:
 
 ```bash
 # 1. Clone the repository
@@ -52,20 +76,6 @@ npm run build
 # 3. Link globally so Git can find it
 npm link
 ```
-
-Once linked, run it inside any Git repository:
-
-```bash
-git wtf
-```
-
-or directly:
-
-```bash
-git-wtf
-```
-
-*(When `git-wtf` is published to the npm registry in the future, global installation will be available via `npm install -g git-wtf`.)*
 
 ---
 

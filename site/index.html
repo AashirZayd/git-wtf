@@ -415,18 +415,31 @@
           <div class="section-eyebrow">Installation</div>
           <h2 class="section-title">Install git-wtf</h2>
           <p class="section-subtitle">
-            Build and link from source in seconds. Works everywhere Git and Node.js are available.
+            Now available on npm. Install globally in seconds or build directly from source.
           </p>
         </div>
 
         <div class="install-box">
-          <div class="code-block" id="install-snippet">git clone https://github.com/AashirZayd/git-wtf.git
+          <div style="font-size: 0.85rem; font-weight: 600; color: var(--text-primary); margin-bottom: 8px;">
+            Primary (npm)
+          </div>
+          <div class="code-block" id="install-snippet">npm install -g git-wtf</div>
+          <div style="margin-top: 10px; margin-bottom: 24px; display: flex; justify-content: space-between; align-items: center;">
+            <span style="font-size: 0.8rem; color: var(--text-muted);">Then run: <code style="font-family: var(--font-mono); color: var(--accent-orange);">git-wtf</code> or <code style="font-family: var(--font-mono); color: var(--accent-orange);">git wtf</code></span>
+            <button class="btn btn-secondary btn-sm copy-btn" data-copy-target="#install-snippet">Copy</button>
+          </div>
+
+          <div style="font-size: 0.85rem; font-weight: 600; color: var(--text-primary); margin-bottom: 8px; border-top: 1px solid var(--border-subtle); padding-top: 20px;">
+            From Source
+          </div>
+          <div class="code-block" id="source-install-snippet">git clone https://github.com/AashirZayd/git-wtf.git
 cd git-wtf
 npm install
 npm run build
 npm link</div>
-          <div style="margin-top: 14px; display: flex; justify-content: flex-end;">
-            <button class="btn btn-secondary btn-sm copy-btn" data-copy-target="#install-snippet">Copy commands</button>
+          <div style="margin-top: 10px; display: flex; justify-content: space-between; align-items: center;">
+            <a href="https://www.npmjs.com/package/git-wtf" target="_blank" rel="noopener noreferrer" style="font-size: 0.8rem; color: var(--text-muted); text-decoration: underline;">View on npm</a>
+            <button class="btn btn-secondary btn-sm copy-btn" data-copy-target="#source-install-snippet">Copy commands</button>
           </div>
         </div>
 
@@ -532,6 +545,7 @@ npm link</div>
       </div>
       <div style="display: flex; gap: 20px;">
         <span>MIT License</span>
+        <a href="https://www.npmjs.com/package/git-wtf" target="_blank" rel="noopener noreferrer">npm</a>
         <a href="https://github.com/AashirZayd/git-wtf" target="_blank" rel="noopener noreferrer">GitHub</a>
       </div>
     </div>

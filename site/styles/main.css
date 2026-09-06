@@ -907,6 +907,8 @@ code, pre {
   color: var(--phosphor-bright);
   display: inline-block;
   margin-bottom: 18px;
+  max-width: 100%;
+  word-break: break-all;
 }
 
 /* Minimal Footer */
@@ -992,6 +994,10 @@ a:focus-visible, button:focus-visible {
 }
 
 @media (max-width: 640px) {
+  .hero {
+    padding: 48px 0 64px;
+  }
+
   .hero-title {
     font-size: 2.3rem;
   }
@@ -1022,5 +1028,78 @@ a:focus-visible, button:focus-visible {
     flex-direction: column;
     gap: 14px;
     text-align: center;
+  }
+}
+
+/* Mobile Small Screen Precision (390px) */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .header {
+    height: auto;
+    padding: 10px 0;
+  }
+
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .nav-links {
+    width: 100%;
+    gap: 10px;
+    font-size: 0.75rem;
+  }
+
+  .hero-title {
+    font-size: 2.1rem;
+  }
+
+  .hero-ctas {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-ctas .btn {
+    width: 100%;
+  }
+
+  .hero-meta {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .terminal-body {
+    padding: 14px 12px;
+    font-size: 0.78rem;
+  }
+
+  .project-entry {
+    padding: 18px 14px;
+  }
+
+  .project-actions {
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .project-actions .btn {
+    flex: 1;
+  }
+
+  .install-box {
+    padding: 18px 14px;
+  }
+
+  .terminal-cta-box {
+    padding: 24px 16px;
+  }
+
+  .cta-command {
+    font-size: 0.75rem;
+    padding: 8px 10px;
   }
 }

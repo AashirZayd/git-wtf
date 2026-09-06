@@ -42,7 +42,7 @@ Suggested next step
 
 ```bash
 # 1. Clone the repository
-git clone <repository-url>
+git clone https://github.com/AashirZayd/git-wtf.git
 cd git-wtf
 
 # 2. Install dependencies & compile

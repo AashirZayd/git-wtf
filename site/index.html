@@ -22,7 +22,7 @@
         <a href="#examples" class="nav-link">Examples</a>
         <a href="#install" class="nav-link">Install</a>
         <a href="#safety" class="nav-link">Safety</a>
-        <a href="#install" class="btn btn-secondary btn-sm" aria-label="GitHub repository - available from source">GitHub (Source)</a>
+        <a href="https://github.com/AashirZayd/git-wtf" class="btn btn-secondary btn-sm" target="_blank" rel="noopener noreferrer" aria-label="GitHub repository">GitHub</a>
       </nav>
     </div>
   </header>
@@ -420,7 +420,7 @@
         </div>
 
         <div class="install-box">
-          <div class="code-block" id="install-snippet">git clone &lt;repository-url&gt;
+          <div class="code-block" id="install-snippet">git clone https://github.com/AashirZayd/git-wtf.git
 cd git-wtf
 npm install
 npm run build
@@ -499,9 +499,11 @@ npm link</div>
           </div>
 
           <div class="safety-card">
-            <div class="safety-tag">Secure</div>
-            <h3 class="safety-title">Safe Process Spawns</h3>
-            <p class="safety-desc">Invokes Git using direct argument arrays. Filenames cannot inject arbitrary shell syntax.</p>
+            <div class="safety-card-inner">
+              <div class="safety-tag">Secure</div>
+              <h3 class="safety-title">Safe Process Spawns</h3>
+              <p class="safety-desc">Invokes Git using direct argument arrays. Filenames cannot inject arbitrary shell syntax.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -514,7 +516,10 @@ npm link</div>
         <p style="margin-bottom: 24px;">
           git-wtf is MIT licensed and designed to stay small, transparent, and developer-focused.
         </p>
-        <a href="#install" class="btn btn-primary">Build from Source →</a>
+        <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+          <a href="https://github.com/AashirZayd/git-wtf" class="btn btn-primary" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
+          <a href="#install" class="btn btn-secondary">Install Instructions</a>
+        </div>
       </div>
     </section>
   </main>
@@ -527,7 +532,7 @@ npm link</div>
       </div>
       <div style="display: flex; gap: 20px;">
         <span>MIT License</span>
-        <a href="#install">Source &amp; Installation</a>
+        <a href="https://github.com/AashirZayd/git-wtf" target="_blank" rel="noopener noreferrer">GitHub</a>
       </div>
     </div>
   </footer>
